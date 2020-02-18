@@ -30,6 +30,12 @@ public class Goal : MonoBehaviour
             scoreGT.text = score.ToString() ;
             PointnClick.ballsLeft-- ;
 
+            if (score > HighScore.highScore) {
+
+                HighScore.highScore = score ;
+
+            }
+
         } else {
 
             SceneManager.LoadScene("Scene0") ;

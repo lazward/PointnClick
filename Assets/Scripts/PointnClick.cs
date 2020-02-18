@@ -37,6 +37,7 @@ public class PointnClick : MonoBehaviour
         
         GameObject.Find("Score").GetComponent<Text>().text = "0" ;
         GameObject.Find("Timer").GetComponent<Text>().text = timer.ToString("F0") ;
+        ballsLeft = 20 ;
         
     }
 
@@ -45,6 +46,7 @@ public class PointnClick : MonoBehaviour
     {
 
         timer -= Time.deltaTime ;
+
         if (ballsLeft == 0) {
 
             GameObject scoreGO = GameObject.Find("Score") ;
@@ -52,6 +54,13 @@ public class PointnClick : MonoBehaviour
             int score = int.Parse(scoreGT.text) ;
             score += ((int)timer * 2000) ;
             scoreGT.text = score.ToString() ;
+
+            if (score > HighScore.highScore) {
+
+                HighScore.highScore = score ;
+
+            }
+            
             SceneManager.LoadScene("Scene0") ;
 
         }
