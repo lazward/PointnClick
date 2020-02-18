@@ -9,7 +9,8 @@ public class PointnClick : MonoBehaviour
 
     public GameObject redPrefab ;
     public GameObject bluePrefab ;
-    public float timer = 10.99f ;
+    public float timer = 30.0f ;
+    public static int ballsLeft = 20 ;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,17 @@ public class PointnClick : MonoBehaviour
     {
 
         timer -= Time.deltaTime ;
+        if (ballsLeft == 0) {
+
+            GameObject scoreGO = GameObject.Find("Score") ;
+            Text scoreGT = scoreGO.GetComponent<Text>() ;
+            int score = int.Parse(scoreGT.text) ;
+            score += ((int)timer * 2000) ;
+            scoreGT.text = score.ToString() ;
+            SceneManager.LoadScene("Scene0") ;
+
+        }
+
         if (timer < 0) {
 
             SceneManager.LoadScene("Scene0") ;

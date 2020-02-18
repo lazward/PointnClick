@@ -830,6 +830,7 @@ MonoBehaviour:
     type: 3}
   bluePrefab: {fileID: 1562202785827865374, guid: 2f59240895a80444d967717bc34c73d0,
     type: 3}
+  timer: 30
 --- !u!1 &1004270393
 GameObject:
   m_ObjectHideFlags: 0

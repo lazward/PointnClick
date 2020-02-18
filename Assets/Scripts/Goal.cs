@@ -28,6 +28,7 @@ public class Goal : MonoBehaviour
             int score = int.Parse(scoreGT.text) ;
             score += 1000 ;
             scoreGT.text = score.ToString() ;
+            PointnClick.ballsLeft-- ;
 
         } else {
 
