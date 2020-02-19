@@ -17,6 +17,12 @@ public class Ball : MonoBehaviour
     void Update()
     {
 
+        if (transform.position.y < -5) {
+
+            transform.position = Vector3.zero + new Vector3(Random.Range(-8, 8), 1f, Random.Range(-3, -1)) ;
+
+        }
+
         if (!isHeld) {
 
             return ;
